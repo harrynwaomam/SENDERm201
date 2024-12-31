@@ -70,9 +70,7 @@ def send_email(config, sender_email, sender_name, recipient_email, subject, body
         
         msg.attach(MIMEText(body, "html" if config.getboolean("SETTINGS", "send_html_letter", fallback=True) else "plain"))
 
-        # Log headers before adding attachments
-        with open("header_before_attachment.log", "a") as log_file:
-            log_file.write(f"Headers before adding attachments:\n{msg.as_string()}\n\n")
+        
 
         # Dynamic Attachment Handling
         if config.getboolean("SETTINGS", "smtp_attachment", fallback=False) and config.get("SETTINGS", "attachment_mode", fallback="normal").lower() == "dynamic":
@@ -122,9 +120,7 @@ def send_email(config, sender_email, sender_name, recipient_email, subject, body
                 except Exception as e:
                     log_general(f"Failed to attach file {attachment}: {e}", success=False)
 
-        # Log headers after adding attachments
-        with open("header_after_attachment.log", "a") as log_file:
-            log_file.write(f"Headers after adding attachments:\n{msg.as_string()}\n\n")
+        
 
         # Sign the entire message with DKIM
         if config.getboolean("SETTINGS", "SignEmail_With_DKim", fallback=False):
