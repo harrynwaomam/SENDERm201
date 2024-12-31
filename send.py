@@ -8,9 +8,10 @@ import threading
 from queue import Queue
 from personalizer import load_file_lines, get_random_line, replace_placeholders
 from logger import log_general, log_to_file
-from hostname import determine_hostname  # Ensure hostname module is imported
-from dkim_handler import ensure_pem_file, dkim_sign_message, log_dkim  # Ensure DKIM module is imported
-from dynamic_attachment import generate_attachment  # Ensure dynamic attachment module is imported
+from hostname import determine_hostname
+from dkim_handler import ensure_pem_file, dkim_sign_message, log_dkim
+from dynamic_attachment import generate_attachment
+from mime_type import get_mime_type
 
 # === CONFIGURATION HANDLING ===
 config = configparser.ConfigParser()
