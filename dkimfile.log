@@ -1,3 +1,0 @@
-2024-12-08 16:34:53.216223 - Generated PEM file for plugtocollab.com.
-2024-12-08 16:34:53.216422 - Failed to sign message for plugtocollab.com: module 'dkim' has no attribute 'sign'
-2024-12-26 11:29:07.344555 - Generated PEM file for haceg.com.

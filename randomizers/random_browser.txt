@@ -1,5 +1,0 @@
-browser Value 1
-browser Value 2
-browser Value 3
-browser Value 4
-browser Value 5
